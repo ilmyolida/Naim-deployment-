@@ -195,6 +195,13 @@
         .lang-tab:hover:not(.active) {
             transform: translateY(-2px);
         }
+        /* TIL PANELLARI – MUHIM TUZATISH */
+        .policy-pane {
+            display: none;
+        }
+        .policy-pane.active {
+            display: block;
+        }
         .section {
             margin-bottom: 28px;
             border-radius: 32px;
@@ -281,25 +288,25 @@
         <div class="lang-tab" data-lang="en"><i class="fas fa-language"></i> English</div>
     </div>
 
-    <!-- O'zbek lotin -->
+    <!-- O‘zbek lotin -->
     <div id="pane-uz-lat" class="policy-pane active">
         <div class="section"><h2><i class="fas fa-gavel"></i> 1. Umumiy qoidalar va ilovaning maqsadi</h2><p><strong>An‑Naim</strong> mobil ilovasi arab tili toliblari, talabalar va tadqiqotchilar uchun mo‘ljallangan elektron lug‘at platformasidir. Ilovani yaratishdan ko‘zlangan asosiy maqsad — arabcha-o‘zbekcha va o‘zbekcha-arabcha lug‘at boyligini raqamlashtirish orqali ilm yo‘lidagi insonlarning vaqtini tejash va o‘rganish jarayonini osonlashtirishdir. Ushbu loyiha <strong>notijorat, ijtimoiy va xayriya</strong> xarakteriga ega bo‘lib, savob umidida xolis xizmat sifatida taqdim etiladi.</p></div>
         <div class="section"><h2><i class="fas fa-copyright"></i> 2. Ma’lumotlar manbasi va intellektual mulk</h2><p>Ilovadagi ma’lumotlar bazasi mavjud bosma lug‘at nashrlaridan, darsliklardan va ochiq ilmiy manbalardan raqamli formatga ko‘chirish orqali shakllantirilgan. Ilova ma’muriyati lug‘atdagi so‘zlar va tarjimalarning asl muallifi emasligini, balki faqatgina ushbu ma’lumotlarni qulay elektron interfeysga joylashtiruvchi texnik tomon ekanligini tan oladi. Lug‘at kontenti asl mualliflarning intellektual mulki hisoblanadi. Ilovada ushbu ma’lumotlardan ta’limiy maqsadlarda (Fair Use) foydalanilgan.</p></div>
         <div class="section"><h2><i class="fas fa-users"></i> 3. Foydalanuvchilarning huquq va majburiyatlari</h2><p><strong>3.1. Foydalanish huquqi:</strong> Foydalanuvchi ilovadan shaxsiy, o‘quv va ilmiy maqsadlarda bepul foydalanish huquqiga ega.<br><strong>3.2. Taqiqlar:</strong> Ilova tarkibidagi ma’lumotlarni dasturiy yo‘l bilan ko‘chirib olish (parsing), ularni sotish yoki boshqa pullik dasturiy mahsulotlar ichida dasturchining ruxsatisiz ishlatish qat’iyan taqiqlanadi.<br><strong>3.3. Odob qoidalari:</strong> Ilova ichidagi aloqa tizimi yoki fikr-mulohaza bildirish bo‘limlarida haqoratli gaplar, dindan qaytaruvchi yoki qonunga xilof materiallar tarqatish taqiqlanadi.</p></div>
         <div class="section"><h2><i class="fas fa-exclamation-triangle"></i> 4. Mas’uliyatni cheklash (Disclaimer)</h2><p><strong>4.1. Texnik xatoliklar:</strong> Lug‘at bazasini kitobdan ilovaga o‘tkazish jarayonida inson omili yoki texnik skanerlash xatolari tufayli imlo xatolari, tarjima noaniqliklari yoki ma’no chalkashliklari bo‘lishi mumkin. Ilova ma’muriyati ma’lumotlarning 100% mukammalligiga kafolat bermaydi.<br><strong>4.2. Zararlar uchun javobgarlik:</strong> Ilovadagi xato ma’lumotlar tufayli foydalanuvchining ilmiy ishlarida, imtihonlarida yoki muloqotida yuzaga keladigan tushunmovchiliklar uchun dasturchi moddiy yoki ma’naviy javobgarlikni o‘z zimmasiga olmaydi.<br><strong>4.3. Ma’lumotlar saqlanishi:</strong> Hozirgi versiyada foydalanuvchi tanlagan "Saralangan so‘zlar" yoki "Qidiruv tarixi" faqatgina foydalanuvchi qurilmasida saqlanadi. Qurilma buzilishi, ilova keshini tozalash yoki ilovani o‘chirib yuborish natijasida ushbu shaxsiy ma’lumotlarning yo‘qolishi bo‘yicha dasturchi mas’ul emas.</p></div>
-        <div class="section"><h2><i class="fas fa-lock"></i> 5. Maxfiylik siyosati (qisqacha)</h2><p>Ilova hozirgi vaqtda foydalanuvchining shaxsiy ma’lumotlarini (ism, telefon, manzil) yig‘maydi va tashqi serverlarga uzatmaydi. Barcha foydalanuvchi sozlamalari qurilmaning ichki xotirasida (Local Storage) saqlanadi. Batafsil maʼlumot uchun <a href="#" style="color:#2ecc71">Maxfiylik siyosati</a> sahifasiga qarang.</p></div>
+        <div class="section"><h2><i class="fas fa-lock"></i> 5. Maxfiylik siyosati (qisqacha)</h2><p>Ilova hozirgi vaqtda foydalanuvchining shaxsiy ma’lumotlarini (ism, telefon, manzil) yig‘maydi va tashqi serverlarga uzatmaydi. Barcha foydalanuvchi sozlamalari qurilmaning ichki xotirasida (Local Storage) saqlanadi. Batafsil maʼlumot uchun <a href="https://ilmyolida.github.io/privaciyn/naimp.html" target="_blank" style="color:#2ecc71">Maxfiylik siyosati</a> sahifasiga qarang.</p></div>
         <div class="section"><h2><i class="fas fa-edit"></i> 6. Shartnomaning o‘zgartirilishi</h2><p>Dasturchi ushbu shartnoma matnini istalgan vaqtda bir tomonlama o‘zgartirish huquqiga ega. Yangi tahrir ilovada e’lon qilingan vaqtdan boshlab kuchga kiradi. Foydalanuvchi ilovadan foydalanishni davom ettirish orqali o‘zgarishlarni qabul qilgan hisoblanadi.</p></div>
         <div class="section"><h2><i class="fas fa-envelope"></i> 7. Aloqa va qo‘llab-quvvatlash</h2><p>Ilovani yanada sifatli qilish uchun takliflar, xatoliklar haqida xabar yoki mualliflik huquqi bo‘yicha e’tirozlar bo‘lsa, quyidagi rasmiy elektron pochta orqali bog‘lanishingiz mumkin:<br><strong><i class="fas fa-at"></i> safemediaosupport@gmail.com</strong></p></div>
         <div class="section"><h2><i class="fas fa-heart"></i> 8. Xulosa va duolar</h2><p>"An-Naim" ilovasidan foydalanishingiz ilm yo‘lidagi xizmatimizga nisbatan ishonchingizni bildiradi. Xatolarimizni kechirishingizni va loyihani rivojlantirishda duolaringiz bilan ishtirok etishingizni umid qilamiz. Ushbu shartlarga rozi bo‘lsangiz, quyidagi “Qabul qilaman” tugmasini bosing.</p></div>
     </div>
 
-    <!-- O'zbek kirill -->
+    <!-- O‘zbek kirill -->
     <div id="pane-uz-cyr" class="policy-pane">
         <div class="section"><h2><i class="fas fa-gavel"></i> 1. Умумий қоидалар ва илованинг мақсади</h2><p><strong>An‑Naim</strong> мобил иловаси араб тили толиблари, талабалар ва тадқиқотчилар учун мўлжалланган электрон луғат платформасидир. Иловани яратишдан кўзланган асосий мақсад — арабча-ўзбекча ва ўзбекча-арабча луғат бойлигини рақамлаштириш орқали илм йўлидаги инсонларнинг вақтини тежаш ва ўрганиш жараёнини осонлаштиришдир. Ушбу лойиҳа <strong>нотижорат, ижтимоий ва хайрия</strong> характерга эга бўлиб, савоб умидида холис хизмат сифатида тақдим этилади.</p></div>
         <div class="section"><h2><i class="fas fa-copyright"></i> 2. Маълумотлар манбаси ва интеллектуал мулк</h2><p>Иловадаги маълумотлар базаси мавжуд босма луғат нашрларидан, дарсликлардан ва очиқ илмий манбалардан рақамли форматга кўчириш орқали шакллантирилган. Илова маъмурияти луғатдаги сўзлар ва таржималарнинг асл муаллифи эмаслигини, балки фақатгина ушбу маълумотларни қулай электрон интерфейсга жойлаштирувчи техник томон эканлигини тан олади. Луғат контенти асл муаллифларнинг интеллектуал мулки ҳисобланади. Иловада ушбу маълумотлардан таълимий мақсадларда (Fair Use) фойдаланилган.</p></div>
         <div class="section"><h2><i class="fas fa-users"></i> 3. Фойдаланувчиларнинг ҳуқуқ ва мажбуриятлари</h2><p><strong>3.1. Фойдаланиш ҳуқуқи:</strong> Фойдаланувчи иловадан шахсий, ўқув ва илмий мақсадларда бепул фойдаланиш ҳуқуқига эга.<br><strong>3.2. Тақиқлар:</strong> Илова таркибидаги маълумотларни дастурий йўл билан кўчириб олиш (parsing), уларни сотиш ёки бошқа пуллик дастурий маҳсулотлар ичида дастурчининг рухсатисиз ишлатиш қатъийан тақиқланади.<br><strong>3.3. Одоб қоидалари:</strong> Илова ичидаги алоқа тизими ёки фикр-мулоҳаза билдириш бўлимларида ҳақоратли гаплар, диндан қайтарувчи ёки қонунга хилоф материаллар тарқатиш тақиқланади.</p></div>
         <div class="section"><h2><i class="fas fa-exclamation-triangle"></i> 4. Масъулиятни чеклаш (Disclaimer)</h2><p><strong>4.1. Техник хато ликлар:</strong> Луғат базасини китобдан иловага ўтказиш жараёнида инсон омили ёки техник сканерлаш хато лари туфайли имло хато лири, таржима ноаниқликлари ёки маъно чалкашликлари бўлиши мумкин. Илова маъмурияти маълумотларнинг 100% мукаммаллигига кафолат бермайди.<br><strong>4.2. Зарарлар учун жавобгарлик:</strong> Иловадаги хато маълумотлар туфайли фойдаланувчининг илмий ишларида, имтиҳонларида ёки мулоқотида юзага келадиган тушунмовчиликлар учун дастурчи моддий ёки маънавий жавобгарликни ўз зиммасига олмайди.<br><strong>4.3. Маълумотлар сақланиши:</strong> Ҳозирги версияда фойдаланувчи танлаган "Сараланган сўзлар" ёки "Қидирув тарихи" фақатгина фойдаланувчи қурилмасида сақланади. Қурилма бузилиши, илова кешини тозалаш ёки иловани ўчириб юбориш натижасида ушбу шахсий маълумотларнинг йўқолиши бўйича дастурчи масъул эмас.</p></div>
-        <div class="section"><h2><i class="fas fa-lock"></i> 5. Максфийлик сиёсати (қисқача)</h2><p>Илова ҳозирги вақтда фойдаланувчининг шахсий маълумотларини (исм, телефон, манзил) йиғмайди ва ташқи серверларга узатмайди. Барча фойдаланувчи созламалари қурилманинг ички хотирасида (Local Storage) сақланади. Батафсил маълумот учун <a href="#" style="color:#2ecc71">Махфийлик сиёсати</a> саҳифасига қаранг.</p></div>
+        <div class="section"><h2><i class="fas fa-lock"></i> 5. Максфийлик сиёсати (қисқача)</h2><p>Илова ҳозирги вақтда фойдаланувчининг шахсий маълумотларини (исм, телефон, манзил) йиғмайди ва ташқи серверларга узатмайди. Барча фойдаланувчи созламалари қурилманинг ички хотирасида (Local Storage) сақланади. Батафсил маълумот учун <a href="https://ilmyolida.github.io/privaciyn/naimp.html" target="_blank" style="color:#2ecc71">Махфийлик сиёсати</a> саҳифасига қаранг.</p></div>
         <div class="section"><h2><i class="fas fa-edit"></i> 6. Шартноманинг ўзгартирилиши</h2><p>Дастурчи ушбу шартнома матнини исталган вақтда бир томонлама ўзгартириш ҳуқуқига эга. Янги таҳрир иловада эълон қилинган вақтдан бошлаб кучга киради. Фойдаланувчи иловадан фойдаланишни давом эттириш орқали ўзгаришларни қабул қилган ҳисобланади.</p></div>
         <div class="section"><h2><i class="fas fa-envelope"></i> 7. Алоқа ва қўллаб-қувватлаш</h2><p>Иловани янада сифатли қилиш учун таклифлар, хато ликлар ҳақида хабар ёки муаллифлик ҳуқуқи бўйича эътирозлар бўлса, қуйидаги расмий электрон почта орқали боғланишингиз мумкин:<br><strong><i class="fas fa-at"></i> safemediaosupport@gmail.com</strong></p></div>
         <div class="section"><h2><i class="fas fa-heart"></i> 8. Хулоса ва дуолар</h2><p>"An-Naim" иловасидан фойдаланишингиз илм йўлидаги хизматимизга нисбатан ишончингизни билдиради. Хатоларимизни кечиришингизни ва лойиҳани ривожлантиришда дуоларингиз билан иштирок этишингизни умид қиламиз. Ушбу шартларга рози бўлсангиз, қуйидаги “Қабул қиламан” тугмасини босинг.</p></div>
@@ -310,8 +317,8 @@
         <div class="section"><h2><i class="fas fa-gavel"></i> 1. Общие положения и цель приложения</h2><p><strong>An‑Naim</strong> – мобильное приложение-словарь для изучающих арабский язык, студентов и исследователей. Основная цель – цифровизация арабско‑узбекской и узбекско‑арабской лексики для экономии времени и облегчения обучения. Проект имеет <strong>некоммерческий, социальный и благотворительный</strong> характер.</p></div>
         <div class="section"><h2><i class="fas fa-copyright"></i> 2. Источники данных и интеллектуальная собственность</h2><p>База данных сформирована путём переноса из печатных словарей, учебников и открытых научных источников. Администрация не является автором словарных статей, а лишь предоставляет техническую платформу. Контент является интеллектуальной собственностью оригинальных авторов и используется в образовательных целях (Fair Use).</p></div>
         <div class="section"><h2><i class="fas fa-users"></i> 3. Права и обязанности пользователей</h2><p><strong>3.1. Право использования:</strong> Бесплатное использование в личных, учебных и научных целях.<br><strong>3.2. Запреты:</strong> Запрещён парсинг, продажа или использование данных в коммерческих продуктах без разрешения.<br><strong>3.3. Правила этики:</strong> Запрещены оскорбления, призывы к нарушению закона или отказу от религии.</p></div>
-        <div class="section"><h2><i class="fas fa-exclamation-triangle"></i> 4. Ограничение ответственности (Disclaimer)</h2><p><strong>4.1. Технические ошибки:</strong> Возможны опечатки, неточности перевода из‑за человеческого фактора. Администрация не гарантирует 100% точность.<br><strong>4.2. Ответственность за убытки:</strong> Разработчик не несёт материальной или моральной ответственности за误解, возникшие из‑за ошибочных данных.<br><strong>4.3. Сохранность данных:</strong> “Избранное” и “История” хранятся локально на устройстве. Разработчик не отвечает за их потерю при сбое устройства или очистке кэша.</p></div>
-        <div class="section"><h2><i class="fas fa-lock"></i> 5. Политика конфиденциальности (кратко)</h2><p>Приложение не собирает и не передаёт персональные данные (имя, телефон, адрес). Все настройки хранятся локально. Подробнее см. <a href="#" style="color:#2ecc71">Политику конфиденциальности</a>.</p></div>
+        <div class="section"><h2><i class="fas fa-exclamation-triangle"></i> 4. Ограничение ответственности (Disclaimer)</h2><p><strong>4.1. Технические ошибки:</strong> Возможны опечатки, неточности перевода из‑за человеческого фактора. Администрация не гарантирует 100% точность.<br><strong>4.2. Ответственность за убытки:</strong> Разработчик не несёт материальной или моральной ответственности за недоразумения, возникшие из‑за ошибочных данных.<br><strong>4.3. Сохранность данных:</strong> “Избранное” и “История” хранятся локально на устройстве. Разработчик не отвечает за их потерю при сбое устройства или очистке кэша.</p></div>
+        <div class="section"><h2><i class="fas fa-lock"></i> 5. Политика конфиденциальности (кратко)</h2><p>Приложение не собирает и не передаёт персональные данные (имя, телефон, адрес). Все настройки хранятся локально. Подробнее см. <a href="https://ilmyolida.github.io/privaciyn/naimp.html" target="_blank" style="color:#2ecc71">Политику конфиденциальности</a>.</p></div>
         <div class="section"><h2><i class="fas fa-edit"></i> 6. Изменение условий</h2><p>Разработчик вправе менять текст оферты в одностороннем порядке. Новая версия вступает в силу с момента публикации в приложении.</p></div>
         <div class="section"><h2><i class="fas fa-envelope"></i> 7. Контакты и поддержка</h2><p>Предложения, сообщения об ошибках или претензии по авторским правам: <strong>safemediaosupport@gmail.com</strong></p></div>
         <div class="section"><h2><i class="fas fa-heart"></i> 8. Заключение</h2><p>Использование приложения означает доверие к нашему служению на пути знаний. Просим прощения за возможные ошибки и надеемся на ваши молитвы. Нажав “Принимаю”, вы соглашаетесь с данными условиями.</p></div>
@@ -323,7 +330,7 @@
         <div class="section"><h2><i class="fas fa-copyright"></i> 2. Data sources and intellectual property</h2><p>The database is compiled from printed dictionaries, textbooks and open scientific sources. The app administration does not claim authorship of the lexical entries; it only provides a technical interface. The content is the intellectual property of the original authors and is used for educational purposes (Fair Use).</p></div>
         <div class="section"><h2><i class="fas fa-users"></i> 3. User rights and obligations</h2><p><strong>3.1. Right to use:</strong> Free use for personal, educational and scientific purposes.<br><strong>3.2. Prohibitions:</strong> Scraping, selling or using the data in commercial products without permission is strictly forbidden.<br><strong>3.3. Code of conduct:</strong> Abusive language, anti‑religious or illegal content is prohibited.</p></div>
         <div class="section"><h2><i class="fas fa-exclamation-triangle"></i> 4. Limitation of liability (Disclaimer)</h2><p><strong>4.1. Technical errors:</strong> Typos or translation inaccuracies may occur due to human factors. The administration does not guarantee 100% accuracy.<br><strong>4.2. Liability for damages:</strong> The developer is not liable for any misunderstanding or loss caused by erroneous data.<br><strong>4.3. Data retention:</strong> “Favourites” and “History” are stored locally on the device. The developer is not responsible for data loss due to device failure or cache clearing.</p></div>
-        <div class="section"><h2><i class="fas fa-lock"></i> 5. Privacy policy (brief)</h2><p>The app does not collect or transmit personal data (name, phone, address). All settings are stored locally. See <a href="#" style="color:#2ecc71">Privacy Policy</a> for details.</p></div>
+        <div class="section"><h2><i class="fas fa-lock"></i> 5. Privacy policy (brief)</h2><p>The app does not collect or transmit personal data (name, phone, address). All settings are stored locally. See <a href="https://ilmyolida.github.io/privaciyn/naimp.html" target="_blank" style="color:#2ecc71">Privacy Policy</a> for details.</p></div>
         <div class="section"><h2><i class="fas fa-edit"></i> 6. Changes to the terms</h2><p>The developer reserves the right to unilaterally change these terms. The new version becomes effective upon publication in the app.</p></div>
         <div class="section"><h2><i class="fas fa-envelope"></i> 7. Contact and support</h2><p>Suggestions, bug reports or copyright claims: <strong>safemediaosupport@gmail.com</strong></p></div>
         <div class="section"><h2><i class="fas fa-heart"></i> 8. Conclusion</h2><p>By using An‑Naim you trust our service on the path of knowledge. We apologise for any mistakes and hope for your prayers. Click “I Accept” to agree.</p></div>
@@ -399,7 +406,7 @@
             }
         });
 
-        // Til almashtirish
+        // Til almashtirish (TO‘G‘RILANGAN)
         const langTabs = document.querySelectorAll('.lang-tab');
         const panes = {
             'uz-lat': document.getElementById('pane-uz-lat'),
@@ -408,13 +415,19 @@
             'en': document.getElementById('pane-en')
         };
         function activateLanguage(lang) {
-            Object.values(panes).forEach(p => p.classList.remove('active'));
-            panes[lang].classList.add('active');
+            // Barcha panellarni yashirish
+            Object.values(panes).forEach(pane => {
+                if (pane) pane.classList.remove('active');
+            });
+            // Tanlangan panelni ko‘rsatish
+            if (panes[lang]) panes[lang].classList.add('active');
+            // Tugmalarning active klassini yangilash
             langTabs.forEach(tab => {
                 tab.classList.remove('active');
                 if (tab.getAttribute('data-lang') === lang) tab.classList.add('active');
             });
         }
+
         langTabs.forEach(tab => {
             tab.addEventListener('click', (e) => {
                 const lang = tab.getAttribute('data-lang');
@@ -422,16 +435,11 @@
             });
         });
 
-        // Qabul qilish tugmasi – ilova ichida WebView dan javascript bilan yopish yoki keyingi bosqichga o‘tish
+        // Qabul qilish tugmasi
         const acceptBtn = document.getElementById('acceptBtn');
         acceptBtn.addEventListener('click', () => {
-            // Bu yerda siz ilova ichida ushbu sahifani yopish yoki asosiy ekranga o‘tish uchun kod yozasiz.
-            // Masalan, WebView da Android: window.YourAppInterface.closeTerms()
-            alert("Siz foydalanish shartlarini qabul qildingiz. Endi ilovadan to‘liq foydalanishingiz mumkin.");
-            // Agar xohlasangiz, uni localStorage ga yozib qo‘yishingiz mumkin:
             localStorage.setItem('termsAccepted', 'true');
-            // Va keyin boshqa sahifaga o‘tish:
-            // window.location.href = "main.html";
+            alert("Siz foydalanish shartlarini qabul qildingiz. Endi ilovadan to‘liq foydalanishingiz mumkin.");
         });
     })();
 </script>
