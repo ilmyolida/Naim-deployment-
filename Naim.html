@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="An-Naim mobil lug‘at ilovasi — foydalanish shartlari va mas’uliyatni cheklash. Uch xil rejim: oq, qora va sariq (o‘qish uchun qulay).">
+    <title>An-Naim lug‘at | Foydalanish shartlari — 3 rejim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.25s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* ========== THEME CSS VARIABLES (default light/white) ========== */
+        :root {
+            --bg-body: linear-gradient(145deg, #eef2f8 0%, #e2e8f0 100%);
+            --card-bg: #ffffff;
+            --text-primary: #1a2c3e;
+            --text-secondary: #2c4b5e;
+            --border-light: #e2edf2;
+            --header-bg: linear-gradient(135deg, #0b3b3f 0%, #1c5d5f 100%);
+            --header-text: #ffffff;
+            --accent-gold: #f5b042;
+            --section-header-bg: #f8fafc;
+            --section-border: #dce5ec;
+            --intro-bg: #fefaf0;
+            --intro-border: #f5b042;
+            --highlight-email-bg: #eef2fa;
+            --highlight-email-border: #cbdde9;
+            --feedback-bg: #f0f6ea;
+            --feedback-border: #6b9c42;
+            --footer-text: #4a627a;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        /* DARK MODE */
+        body[data-theme="dark"] {
+            --bg-body: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #eef2ff;
+            --text-secondary: #cbd5e1;
+            --border-light: #334155;
+            --header-bg: linear-gradient(135deg, #0a1c2a 0%, #0f2c2e 100%);
+            --header-text: #f1f5f9;
+            --accent-gold: #fbbf24;
+            --section-header-bg: #0f212e;
+            --section-border: #2d3a48;
+            --intro-bg: #1e2a2f;
+            --intro-border: #fbbf24;
+            --highlight-email-bg: #1e2a3a;
+            --highlight-email-border: #3b4e62;
+            --feedback-bg: #1c2f24;
+            --feedback-border: #84cc16;
+            --footer-text: #94a3b8;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.5);
+        }
+
+        /* SARIQ (AMBER / SEPIA) MODE - o‘qish uchun qulay, issiq ranglar */
+        body[data-theme="sariq"] {
+            --bg-body: #fcf7e8;
+            --card-bg: #fffaf0;
+            --text-primary: #5e3a1c;
+            --text-secondary: #7b583c;
+            --border-light: #f0dfb5;
+            --header-bg: linear-gradient(135deg, #b16e2e 0%, #d89a4a 100%);
+            --header-text: #2f241b;
+            --accent-gold: #c97e2a;
+            --section-header-bg: #fff1df;
+            --section-border: #eeddb9;
+            --intro-bg: #fff4e4;
+            --intro-border: #e09d32;
+            --highlight-email-bg: #f7e9ce;
+            --highlight-email-border: #dcb872;
+            --feedback-bg: #f9efdb;
+            --feedback-border: #c9852c;
+            --footer-text: #8b6946;
+            --shadow-sm: 0 8px 18px rgba(100, 60, 10, 0.08);
+            --shadow-hover: 0 12px 24px rgba(100, 60, 10, 0.12);
+        }
+
+        body {
+            background: var(--bg-body);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        /* Theme Toggle Panel */
+        .theme-panel {
+            max-width: 1100px;
+            margin: 0 auto 1.2rem auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .theme-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            backdrop-filter: blur(2px);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            background: var(--section-header-bg);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .theme-btn.active {
+            background: var(--accent-gold);
+            color: #1e1a0c;
+            border-color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Asosiy konteyner */
+        .terms-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 32px;
+            box-shadow: var(--shadow-hover);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Dekorativ sarlavha qismi */
+        .terms-header {
+            background: var(--header-bg);
+            padding: 2rem 2rem 1.8rem 2rem;
+            color: var(--header-text);
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        .terms-header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .terms-header h1 span {
+            background: rgba(255,255,240,0.18);
+            padding: 0.2rem 0.9rem;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .app-badge {
+            background: rgba(0,0,0,0.1);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(2px);
+        }
+
+        .terms-content {
+            padding: 2.2rem 2rem 2.5rem 2rem;
+        }
+
+        /* Asosiy matn uslubi */
+        .intro-text {
+            font-size: 1.08rem;
+            background: var(--intro-bg);
+            padding: 1.4rem 1.6rem;
+            border-radius: 28px;
+            border-left: 6px solid var(--intro-border);
+            margin-bottom: 2.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Har bir bo'lim kartasi */
+        .legal-section {
+            margin-bottom: 2rem;
+            border-radius: 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--section-border);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .legal-section:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section-title {
+            background: var(--section-header-bg);
+            padding: 1rem 1.6rem;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .section-title .number-circle {
+            background: var(--accent-gold);
+            color: #221c0e;
+            width: 32px;
+            height: 32px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: inset 0 1px 1px rgba(255,255,200,0.4), 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .section-body {
+            padding: 1.3rem 1.8rem 1.6rem 1.8rem;
+        }
+
+        .section-body p {
+            margin-bottom: 1rem;
+        }
+
+        .section-body ul {
+            margin: 0.8rem 0 0.5rem 1.6rem;
+            list-style-type: disc;
+        }
+
+        .section-body li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-email {
+            background: var(--highlight-email-bg);
+            border-radius: 60px;
+            padding: 0.4rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: monospace;
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0.5rem 0 0.8rem 0;
+            border: 1px solid var(--highlight-email-border);
+            transition: 0.2s;
+        }
+
+        .highlight-email a {
+            text-decoration: none;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .highlight-email a:hover {
+            text-decoration: underline;
+            filter: brightness(1.1);
+        }
+
+        .email-icon {
+            font-size: 1.2rem;
+        }
+
+        .feedback-note {
+            background: var(--feedback-bg);
+            padding: 1rem 1.4rem;
+            border-radius: 18px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--feedback-border);
+            color: var(--text-secondary);
+        }
+
+        hr {
+            margin: 1.2rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, var(--border-light), transparent);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.85rem;
+            color: var(--footer-text);
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .terms-content {
+                padding: 1.6rem;
+            }
+            .section-body {
+                padding: 1rem 1.2rem 1.2rem 1.2rem;
+            }
+            .section-title {
+                font-size: 1.25rem;
+                padding: 0.8rem 1.2rem;
+            }
+            .intro-text {
+                padding: 1rem;
+                font-size: 0.98rem;
+            }
+            .terms-header h1 {
+                font-size: 1.4rem;
+            }
+            .theme-panel {
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="theme-panel">
+    <button class="theme-btn" data-theme="light">☀️ Oq rejim</button>
+    <button class="theme-btn" data-theme="dark">🌙 Qora rejim</button>
+    <button class="theme-btn" data-theme="sariq">🟡 Sariq rejim (o‘qish)</button>
+</div>
+
+<div class="terms-container">
+    <div class="terms-header">
+        <h1>
+            📜 Foydalanish shartlari <span>&</span> mas'uliyatni cheklash
+        </h1>
+        <div class="app-badge">
+            🕌 “An-Naim” — mobil lug‘at ilovasi | 3 xil rejimda qulaylik
+        </div>
+    </div>
+
+    <div class="terms-content">
+        <!-- Asosiy muqaddima -->
+        <div class="intro-text">
+            📖 “An-Naim” mobil lug‘at ilovasi xolis niyatda, ilm yo‘lidagi toliblarga arab tili lug‘atlarini o‘rganishda qulaylik yaratish va vaqtlarini tejash maqsadida ishlab chiqildi. Ilovadan foydalanishdan avval quyidagi bandlar bilan tanishib chiqishingizni so‘raymiz:
+        </div>
+
+        <!-- 1-bo'lim: Ma'lumotlar manbasi va aniqligi -->
+        <div class="legal-section">
+            <div class="section-title">
+                <span class="number-circle">1</span> Ma’lumotlar manbasi va aniqligi
+            </div>
+            <div class="section-body">
+                <p>Ushbu ilovadagi ma’lumotlar mavjud bosma lug‘at kitoblaridan raqamli formatga ko‘chirilgan (nusxalangan). Shuni ma’lum qilamizki:</p>
+                <ul>
+                    <li>Ma’lumotlarni kitobdan ilovaga ko‘chirish jarayonida texnik xatoliklar, imlo xatolari yoki harflar tushib qolishi ehtimoli mavjud.</li>
+                    <li>Ilova ma’lumotlarning 100% xatosizligiga kafolat bermaydi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2-bo'lim: Mas'uliyatni cheklash -->
+        <div class="legal-section">
+            <div class="section-title">
+                <span class="number-circle">2</span> Mas'uliyatni cheklash
+            </div>
+            <div class="section-body">
+                <p><strong>Dasturchi va mualliflar:</strong> Ilovadagi ma’lumotlarning noto‘g‘ri talqin qilinishi yoki texnik xatoliklar tufayli yuzaga kelishi mumkin bo‘lgan har qanday moddiy yoki ma’naviy zarar uchun mas’uliyatni o‘z zimmasiga olmaydi.</p>
+                <p>Lug‘atdan olingan ma’lumotlarni muhim ilmiy ishlar yoki rasmiy hujjatlarda ishlatishdan avval, ularni bosma asl nusxalar (kitoblar) bilan solishtirib tekshirib olishingiz tavsiya etiladi.</p>
+            </div>
+        </div>
+
+        <!-- 3-bo'lim: Savob umidida va xolis xizmat -->
+        <div class="legal-section">
+            <div class="section-title">
+                <span class="number-circle">3</span> Savob umidida va xolis xizmat
+            </div>
+            <div class="section-body">
+                <p>Ushbu loyiha tijoriy maqsadlarni ko‘zlamaydi. Asosiy maqsad — Qirg‘iziston va butun dunyodagi arab tili o‘rganuvchilariga yordam berishdir. Ilovadagi kamchiliklarni bartaraf etishda sizning yordamingiz biz uchun qadrlidir.</p>
+            </div>
+        </div>
+
+        <!-- 4-bo'lim: Aloqa va qo'llab-quvvatlash -->
+        <div class="legal-section">
+            <div class="section-title">
+                <span class="number-circle">4</span> Aloqa va qo‘llab-quvvatlash
+            </div>
+            <div class="section-body">
+                <p>Agar siz ilovada texnik xatolik, tarjimadagi noaniqlik ko‘rsangiz yoki loyihani rivojlantirish bo‘yicha o‘z fikr-mulohazalaringiz va takliflaringizni bildirmoqchi bo‘lsangiz, quyidagi elektron pochta orqali biz bilan bog‘lanishingizni so‘raymiz:</p>
+                <div class="highlight-email">
+                    <span class="email-icon">📧</span>
+                    <a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a>
+                </div>
+                <div class="feedback-note">
+                    💡 Sizning fikringiz biz uchun muhim va ilovani yanada mukammal qilishga yordam beradi.
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="footer-note">
+            🌿 “An-Naim” — ilm yo‘lida fidoyi xizmat. Barcha foydalanuvchilarni o‘zaro hurmat va to‘g‘rilikka chorlaymiz.<br>
+            Ushbu hujjat istalgan vaqtda yangilanishi mumkin, ammo asosiy maqsad va mas’uliyat chegaralari o‘zgarmaydi.
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Theme management: light, dark, sariq
+        const themes = ['light', 'dark', 'sariq'];
+        const body = document.body;
+        const themeButtons = document.querySelectorAll('.theme-btn');
+
+        // Load saved theme from localStorage
+        const savedTheme = localStorage.getItem('annaim_theme');
+        if (savedTheme && themes.includes(savedTheme)) {
+            body.setAttribute('data-theme', savedTheme);
+            updateActiveButton(savedTheme);
+        } else {
+            // default light
+            body.setAttribute('data-theme', 'light');
+            updateActiveButton('light');
+        }
+
+        // Add click event to each theme button
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const themeValue = btn.getAttribute('data-theme');
+                if (themeValue && themes.includes(themeValue)) {
+                    body.setAttribute('data-theme', themeValue);
+                    localStorage.setItem('annaim_theme', themeValue);
+                    updateActiveButton(themeValue);
+                }
+            });
+        });
+
+        function updateActiveButton(activeTheme) {
+            themeButtons.forEach(btn => {
+                const themeVal = btn.getAttribute('data-theme');
+                if (themeVal === activeTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Also optional: if system prefers dark, but we keep manual over localStorage
+        // small extra: match icons for clarity (already done)
+    })();
+</script>
+</body>
+  </html>
